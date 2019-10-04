@@ -1,4 +1,16 @@
-@import "../../shared/scss/globals";
+// Bootstrap Grid & Reboot Modules
+@import "../../shared/scss/bootstrap/functions";
+@import "../../shared/scss/bootstrap/variables";
+@import "../../shared/scss/bootstrap/mixins";
+@import "../../shared/scss/bootstrap/reboot";
+@import "../../shared/scss/bootstrap/grid";
+@import "../../shared/scss/bootstrap/type";
+@import "../../shared/scss/bootstrap/buttons";
+@import "../../shared/scss/bootstrap/utilities/display";
+@import "../../shared/scss/bootstrap/utilities/flex";
+@import "../../shared/scss/bootstrap/utilities/spacing";
+
+// Custom SCSS
 @import "../../shared/scss/menu";
 
 @keyframes fade-to-view {
@@ -17,6 +29,7 @@
 header {
   height: 100vh;
   overflow: hidden;
+  background: #000;
   color: #fff;
 
   #openexo-bg-video {
@@ -43,6 +56,15 @@ header {
     &:nth-child(3) {
       //margin: 0;
       //margin-top: -100vh;
+    }
+  }
+}
+
+main {
+  .row {
+    .col-lg-4:nth-child(1) {
+      background: url(../../shared/img/s2-bg.jpg);
+      background-position: 15% 40%;
     }
   }
 }
