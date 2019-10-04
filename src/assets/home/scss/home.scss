@@ -60,6 +60,13 @@ header {
   }
 }
 
+.separator {
+  display: inline-block;
+  background: #573af5;
+  height: 10px;
+  width: 8vw;
+}
+
 main {
   .row {
     .col-lg-4:nth-child(1) {
@@ -68,3 +75,13 @@ main {
     }
   }
 }
+
+section {
+  & > div.container-fluid:nth-child(1) {
+    .section-lead {
+      display: inline-block;
+      width: 78vw;
+    }
+  }
+}
+
