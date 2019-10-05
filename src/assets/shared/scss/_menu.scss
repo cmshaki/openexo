@@ -67,13 +67,16 @@
   right: 0;
   transition: all 0.5s ease;
 
+  & > button {
+    position: absolute;
+    top: 2vh;
+    right: 3vw;
+  }
+
   button {
     color: #fff;
     border: none;
     background: transparent;
-    position: absolute;
-    top: 2vh;
-    right: 3vw;
     span {
       font-size: 25px;
     }
@@ -84,6 +87,8 @@
     list-style-type: none;
     margin-top: 18vh;
     text-align: right;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
 
     li {
       margin-bottom: 10px;
@@ -105,30 +110,30 @@
             }
           }
         }
+      }
+    }
+  }
 
-        span {
-          font-size: 15px;
-          vertical-align: middle;
-        }
+  .document-links {
+    display: none;
+    text-align: right;
+    img {
+      height: 10vh;
+    }
+    button {
+      margin-top: 20vh;
+      color: rgba(#fff, 0.3);
+      font-size: 40px;
 
-        div.line {
-          display: inline-block;
-          vertical-align: middle;
-          transition: all 0.2s ease;
-          width: 20vw;
-          height: 1px;
-          background: rgba(#fff, 0.3);
+      &:nth-child(3) {
+        margin-right: 20vw;
+      }
 
-          &::after {
-            display: inline-block;
-            content: "";
-            height: 2px;
-            width: 0;
-            position: absolute;
-            background: #fff;
-            transition: all 0.2s ease;
-          }
-        }
+      &:hover {
+        color: #fff;
+      }
+      span {
+        font-size: 50px;
       }
     }
   }
