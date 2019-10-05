@@ -7,7 +7,6 @@ const menu = document.querySelector(".nav-menu");
 const menuLines = document.querySelectorAll(".nav-menu .line");
 const menuText = document.querySelector(".nav-menu .text");
 
-let top = main.getBoundingClientRect().top;
 let windowHeight = window.innerHeight / 2;
 let headerTop = header.getBoundingClientRect().top;
 let mainTop = main.getBoundingClientRect().top;
@@ -15,7 +14,7 @@ let sectionTop = section.getBoundingClientRect().top;
 let currentScroll = body.scrollTop || html.scrollTop;
 
 console.log(currentScroll);
-if (top < windowHeight) {
+if ((html.scrollTop || body.scrollTop) > menu.offsetTop) {
   if (
     !menuText.style.color ||
     menuText.style.color == "#ffffff" ||
@@ -39,7 +38,7 @@ if (top < windowHeight) {
 }
 
 document.addEventListener("scroll", () => {
-  if (top < windowHeight) {
+  if ((html.scrollTop || body.scrollTop) > menu.offsetTop) {
     if (
       !menuText.style.color ||
       menuText.style.color == "#ffffff" ||
