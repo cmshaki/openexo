@@ -1,6 +1,6 @@
 {
   "name": "openexo",
-  "version": "1.13.2",
+  "version": "1.13.3",
   "description": "Open Exo's website",
   "main": "index.js",
   "repository": "https://github.com/cmshaki/openexo.git",
