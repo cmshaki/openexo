@@ -93,12 +93,15 @@ section {
 
 @media (max-width: 991px) {
   main {
-    height: 200vh;
+    height: auto;
     .row {
-      height: 200vh;
+      height: auto;
       & > div {
-        height: 100vh;
+        height: auto;
       }
     }
+  }
+  section {
+    height: auto;
   }
 }
