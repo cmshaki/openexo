@@ -94,26 +94,26 @@ document.addEventListener("scroll", () => {
   if (body.scrollTop > 0) {
     // Down Scroll
     if (
-      body.scrollTop > header.offsetTop &&
+      body.scrollTop > header.offsetTop + window.innerHeight / 4 &&
       body.scrollTop < main.offsetTop - window.innerHeight / 2
     ) {
       window.scrollTo(0, main.offsetTop);
     }
     if (
-      body.scrollTop > main.offsetTop &&
+      body.scrollTop > main.offsetTop + window.innerHeight / 4 &&
       body.scrollTop < section.offsetTop - window.innerHeight / 2
     ) {
       window.scrollTo(0, section.offsetTop);
     }
     // Up Sroll
     if (
-      body.scrollTop < main.offsetTop &&
+      body.scrollTop < main.offsetTop - window.innerHeight / 4 &&
       body.scrollTop > main.offsetTop - window.innerHeight / 2
     ) {
       window.scrollTo(0, header.offsetTop);
     }
     if (
-      body.scrollTop < section.offsetTop &&
+      body.scrollTop < section.offsetTop - window.innerHeight / 4 &&
       body.scrollTop > section.offsetTop - window.innerHeight / 2
     ) {
       window.scrollTo(0, main.offsetTop);
