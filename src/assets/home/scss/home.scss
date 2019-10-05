@@ -14,7 +14,7 @@
 @import "../../shared/scss/menu";
 @import "../../shared/scss/hero";
 
-@keyframes fade-to-view {
+@keyframes fade-in {
   0% {
     opacity: 0;
   }
@@ -35,7 +35,7 @@ header {
   color: #fff;
 
   #openexo-bg-video {
-    animation: fade-to-view 2s ease-in 5s forwards;
+    animation: fade-in 2s ease-in 5s forwards;
     max-width: 100%;
     object-fit: cover;
   }
@@ -91,3 +91,14 @@ section {
   }
 }
 
+@media (max-width: 991px) {
+  main {
+    height: 200vh;
+    .row {
+      height: 200vh;
+      & > div {
+        height: 100vh;
+      }
+    }
+  }
+}
