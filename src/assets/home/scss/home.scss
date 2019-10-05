@@ -12,7 +12,7 @@
 
 // Custom SCSS
 @import "../../shared/scss/menu";
-@import "../../shared/scss/typewriter";
+@import "../../shared/scss/hero";
 
 @keyframes fade-to-view {
   0% {
@@ -68,8 +68,10 @@ header {
 
 main {
   height: 100vh;
+
   .row {
     height: 100vh;
+
     .col-lg-4:nth-child(1) {
       background: url(../../shared/img/s2-bg.jpg);
       background-position: 15% 40%;
