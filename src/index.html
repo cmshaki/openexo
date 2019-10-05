@@ -14,60 +14,47 @@
     </aside>
 
     <aside class="menu-modal">
+      <button type="button" class="close" aria-label="Close">
+        Close
+        <span aria-hidden="true">&times;</span>
+      </button>
       <ul>
         <li>
-          <a href="/" class="list-item-wrapper">
-            <span>01.</span>
-            <div class="line"></div>
-            HOME
+          <a href="#home" class="list-item-wrapper">
+            home
           </a>
         </li>
         <li>
-          <a href="/dna" class="list-item-wrapper">
-            <span>02.</span>
-            <div class="line"></div>
-            DNA
+          <a href="#learn" class="list-item-wrapper">
+            learn
           </a>
         </li>
         <li>
-          <a href="/lab" class="list-item-wrapper">
-            <span>03.</span>
-            <div class="line"></div>
-            LAB
+          <a href="javascript:void(0)" class="list-item-wrapper">
+            documents
           </a>
         </li>
         <li>
-          <a href="/connect" class="list-item-wrapper">
-            <span>04.</span>
-            <div class="line"></div>
-            CONNECT
+          <a href="#register" class="list-item-wrapper">
+            register
           </a>
         </li>
         <li>
-          <a href="/community" class="list-item-wrapper">
-            <span>05.</span>
-            <div class="line"></div>
-            COMMUNITY
-          </a>
-        </li>
-        <li>
-          <a href="/dnafund" class="list-item-wrapper">
-            <span>06.</span>
-            <div class="line"></div>
-            DNAFUND
+          <a href="#login" class="list-item-wrapper">
+            login
           </a>
         </li>
       </ul>
     </aside>
 
-    <header>
+    <header id="home">
       <video autoplay muted loop id="openexo-bg-video">
         <source src="/assets/video/OpenEXOS_intro.mp4" type="video/mp4" />
         Your browser does not support HTML5 video.
       </video>
     </header>
 
-    <main class="container-fluid">
+    <main class="container-fluid" id="learn">
       <div class="row">
         <div class="col-sm-12 col-lg-4 py-5 text-center">
           <div class="mb-6">
@@ -167,7 +154,7 @@
       </div>
       <div class="container">
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-sm-6" id="register">
             <h2 class="display-5">New Users</h2>
             <p class="lead">
               Signup to access you EXOS token through one of the options below.
@@ -186,7 +173,7 @@
             </button>
           </div>
 
-          <div class="col-sm-6">
+          <div class="col-sm-6" id="login">
             <h2 class="display-5">Current Users</h2>
             <p class="lead">
               Login to your account below. Remember to check back often to earn
