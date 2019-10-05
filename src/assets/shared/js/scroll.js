@@ -66,26 +66,26 @@ document.addEventListener("scroll", () => {
   if (html.scrollTop > 0) {
     // Down Scroll
     if (
-      html.scrollTop > header.offsetTop &&
+      html.scrollTop > header.offsetTop + window.innerHeight / 4 &&
       html.scrollTop < main.offsetTop - window.innerHeight / 2
     ) {
       window.scrollTo(0, main.offsetTop);
     }
     if (
-      html.scrollTop > main.offsetTop &&
+      html.scrollTop > main.offsetTop + window.innerHeight / 4 &&
       html.scrollTop < section.offsetTop - window.innerHeight / 2
     ) {
       window.scrollTo(0, section.offsetTop);
     }
     // Up Sroll
     if (
-      html.scrollTop < main.offsetTop &&
+      html.scrollTop < main.offsetTop - window.innerHeight / 4 &&
       html.scrollTop > main.offsetTop - window.innerHeight / 2
     ) {
       window.scrollTo(0, header.offsetTop);
     }
     if (
-      html.scrollTop < section.offsetTop &&
+      html.scrollTop < section.offsetTop - window.innerHeight / 4 &&
       html.scrollTop > section.offsetTop - window.innerHeight / 2
     ) {
       window.scrollTo(0, main.offsetTop);
