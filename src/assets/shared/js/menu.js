@@ -64,4 +64,7 @@ closeNav.addEventListener("click", () => {
   menu.setAttribute("style", "visibility: visible; opacity: 1");
   body.setAttribute("style", "overflow: auto");
   html.setAttribute("style", "overflow: auto");
+  allLinks.setAttribute("style", "display: block");
+  documentLinksBody.setAttribute("style", "display: none");
+  closeBtn.setAttribute("style", "visibility: visible; opacity: 1");
 });

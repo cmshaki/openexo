@@ -39,6 +39,7 @@
   }
 
   &:hover {
+    cursor: pointer;
     .line {
       &:nth-child(2),
       &:nth-child(4) {

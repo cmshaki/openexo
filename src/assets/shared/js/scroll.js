@@ -1,4 +1,6 @@
 const main = document.querySelector("main");
+const mainFirstCol = document.querySelector("main .row .col-md-12:first-child");
+const mainSecondCol = document.querySelector("main .row .col-md-12:last-child");
 const body = document.querySelector("body");
 const html = document.querySelector("html");
 const header = document.querySelector("header");
@@ -8,12 +10,7 @@ const menuLines = document.querySelectorAll(".nav-menu .line");
 const menuText = document.querySelector(".nav-menu .text");
 
 let windowHeight = window.innerHeight / 2;
-let headerTop = header.getBoundingClientRect().top;
-let mainTop = main.getBoundingClientRect().top;
-let sectionTop = section.getBoundingClientRect().top;
-let currentScroll = body.scrollTop || html.scrollTop;
 
-console.log(currentScroll);
 if ((html.scrollTop || body.scrollTop) > menu.offsetTop) {
   if (
     !menuText.style.color ||
@@ -65,31 +62,44 @@ document.addEventListener("scroll", () => {
   if (html.scrollTop > 0) {
     // Down Scroll
     if (
-      html.scrollTop > header.offsetTop + window.innerHeight / 4 &&
-      html.scrollTop < main.offsetTop - window.innerHeight / 2
+      mainFirstCol.offsetTop == mainSecondCol.offsetTop ||
+      (html.scrollTop > header.offsetTop + window.innerHeight / 4 &&
+        html.scrollTop < mainFirstCol.offsetTop - window.innerHeight / 2)
     ) {
       window.scrollTo(0, main.offsetTop);
+    } else if (
+      html.scrollTop > mainFirstCol.offsetTop + window.innerHeight / 4 &&
+      html.scrollTop < mainSecondCol.offsetTop - window.innerHeight / 2
+    ) {
+      window.scrollTo(0, mainSecondCol.offsetTop);
     }
     if (
-      html.scrollTop > main.offsetTop + window.innerHeight / 4 &&
+      html.scrollTop > mainSecondCol.offsetTop + window.innerHeight / 4 &&
       html.scrollTop < section.offsetTop - window.innerHeight / 2
     ) {
       window.scrollTo(0, section.offsetTop);
     }
     // Up Sroll
     if (
-      html.scrollTop < main.offsetTop - window.innerHeight / 4 &&
-      html.scrollTop > main.offsetTop - window.innerHeight / 2
+      mainFirstCol.offsetTop == mainSecondCol.offsetTop ||
+      (html.scrollTop < mainFirstCol.offsetTop - window.innerHeight / 4 &&
+        html.scrollTop > mainFirstCol.offsetTop - window.innerHeight / 2)
     ) {
-      window.scrollTo(0, header.offsetTop);
+      window.scrollTo(1, 0);
+    } else if (
+      html.scrollTop > mainSecondCol.offsetTop + window.innerHeight / 4 &&
+      html.scrollTop < mainSecondCol.offsetTop - window.innerHeight / 2
+    ) {
+      window.scrollTo(0, mainFirstCol.offsetTop);
     }
     if (
       html.scrollTop < section.offsetTop - window.innerHeight / 4 &&
       html.scrollTop > section.offsetTop - window.innerHeight / 2
     ) {
-      window.scrollTo(0, main.offsetTop);
+      window.scrollTo(0, mainSecondCol.offsetTop);
     }
   }
+
   if (body.scrollTop > 0) {
     // Down Scroll
     if (
