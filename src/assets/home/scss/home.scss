@@ -30,12 +30,14 @@
 header {
   height: 100vh;
   overflow: hidden;
+  display: flex;
   background: #000;
   color: #fff;
 
   #openexo-bg-video {
     animation: fade-to-view 2s ease-in 5s forwards;
-    min-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
   }
 
   div.logo-wrapper {
