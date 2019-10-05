@@ -1,9 +1,9 @@
+const html = document.querySelector("html");
+const body = document.querySelector("body");
 const menu = document.querySelector(".nav-menu");
 const menuModal = document.querySelector(".menu-modal");
 const closeBtn = document.querySelector(".menu-modal .close");
 const listItems = document.querySelectorAll(".menu-modal .list-item-wrapper");
-const html = document.querySelector("html");
-const body = document.querySelector("body");
 
 closeBtn.addEventListener("click", () => {
   menuModal.setAttribute("style", "visibility: hidden; opacity: 0; width: 0");

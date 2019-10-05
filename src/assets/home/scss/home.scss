@@ -12,6 +12,7 @@
 
 // Custom SCSS
 @import "../../shared/scss/menu";
+@import "../../shared/scss/typewriter";
 
 @keyframes fade-to-view {
   0% {
@@ -35,8 +36,6 @@ header {
   #openexo-bg-video {
     animation: fade-to-view 2s ease-in 5s forwards;
     min-height: 100%;
-    object-fit: none;
-    object-position: 10% 10%;
   }
 
   div.logo-wrapper {
