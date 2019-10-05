@@ -103,29 +103,41 @@ document.addEventListener("scroll", () => {
   if (body.scrollTop > 0) {
     // Down Scroll
     if (
-      body.scrollTop > header.offsetTop + window.innerHeight / 4 &&
-      body.scrollTop < main.offsetTop - window.innerHeight / 2
+      mainFirstCol.offsetTop == mainSecondCol.offsetTop ||
+      (body.scrollTop > header.offsetTop + window.innerHeight / 4 &&
+        body.scrollTop < mainFirstCol.offsetTop - window.innerHeight / 2)
     ) {
       window.scrollTo(0, main.offsetTop);
+    } else if (
+      body.scrollTop > mainFirstCol.offsetTop + window.innerHeight / 4 &&
+      body.scrollTop < mainSecondCol.offsetTop - window.innerHeight / 2
+    ) {
+      window.scrollTo(0, mainSecondCol.offsetTop);
     }
     if (
-      body.scrollTop > main.offsetTop + window.innerHeight / 4 &&
+      body.scrollTop > mainSecondCol.offsetTop + window.innerHeight / 4 &&
       body.scrollTop < section.offsetTop - window.innerHeight / 2
     ) {
       window.scrollTo(0, section.offsetTop);
     }
     // Up Sroll
     if (
-      body.scrollTop < main.offsetTop - window.innerHeight / 4 &&
-      body.scrollTop > main.offsetTop - window.innerHeight / 2
+      mainFirstCol.offsetTop == mainSecondCol.offsetTop ||
+      (body.scrollTop < mainFirstCol.offsetTop - window.innerHeight / 4 &&
+        body.scrollTop > mainFirstCol.offsetTop - window.innerHeight / 2)
     ) {
-      window.scrollTo(0, header.offsetTop);
+      window.scrollTo(1, 0);
+    } else if (
+      body.scrollTop > mainSecondCol.offsetTop + window.innerHeight / 4 &&
+      body.scrollTop < mainSecondCol.offsetTop - window.innerHeight / 2
+    ) {
+      window.scrollTo(0, mainFirstCol.offsetTop);
     }
     if (
       body.scrollTop < section.offsetTop - window.innerHeight / 4 &&
       body.scrollTop > section.offsetTop - window.innerHeight / 2
     ) {
-      window.scrollTo(0, main.offsetTop);
+      window.scrollTo(0, mainSecondCol.offsetTop);
     }
   }
 });
