@@ -84,6 +84,9 @@ section {
 }
 
 @media (max-width: 991px) {
+  .separator {
+    width: 40vw;
+  }
   main {
     height: auto;
     .row {
