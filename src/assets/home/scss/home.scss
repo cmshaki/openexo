@@ -174,9 +174,12 @@ main {
   .row {
     height: 100vh;
 
-    .col-md-12:nth-child(1) {
-      background: url(../../shared/img/s2-bg.jpg);
-      background-position: 15% 40%;
+    .col-md-12 {
+      display: none;
+      &:nth-child(1) {
+        background: url(../../shared/img/s2-bg.jpg);
+        background-position: 15% 40%;
+      }
     }
   }
 }

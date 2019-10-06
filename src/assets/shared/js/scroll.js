@@ -1,7 +1,7 @@
 const header = document.querySelector("header");
 const main = document.querySelector("main");
+const mainCols = document.querySelectorAll("main .row .col-md-12");
 const section = document.querySelector("section");
-const html = document.querySelector("html");
 
 // Variables to be Used
 let count = 0;
@@ -24,18 +24,34 @@ const downScrollHandler = () => {
         "style",
         "animation: scroll-out-above 0.2s ease-in forwards"
       );
-      main.setAttribute("style", "display: flex");
+      main.setAttribute("style", "display: block");
+      if (window.innerWidth > 992) {
+        mainCols[0].setAttribute("style", "display: block");
+        mainCols[1].setAttribute("style", "display: block");
+      } else {
+        mainCols[0].setAttribute("style", "display: block");
+      }
       window.scrollTo(0, window.innerHeight / 2);
+      lastPos = window.scrollY;
+    } else if (
+      getComputedStyle(main).getPropertyValue("display") == "block" &&
+      getComputedStyle(mainCols[0]).getPropertyValue("display") != "none" &&
+      getComputedStyle(mainCols[1]).getPropertyValue("display") == "none"
+    ) {
+      mainCols[0].setAttribute("style", "display: none");
+      mainCols[1].setAttribute("style", "display: block");
+      window.scrollTo(0, window.innerHeight / 2);
+      lastPos = window.scrollY;
     } else if (
       getComputedStyle(main).getPropertyValue("display") != "none" &&
       getComputedStyle(header).getPropertyValue("opacity") == 0
     ) {
-      main.setAttribute(
-        "style",
-        "animation: scroll-out-above 0.2s ease-in forwards"
-      );
+      mainCols[0].setAttribute("style", "display: none");
+      mainCols[1].setAttribute("style", "display: none");
+      main.setAttribute("style", "display: none");
       section.setAttribute("style", "display: flex; width: 100%");
       window.scrollTo(0, window.innerHeight / 2);
+      lastPos = window.scrollY;
     } else {
       lastPos = window.scrollY;
     }
@@ -48,8 +64,24 @@ const upScrollHandler = () => {
       getComputedStyle(header).getPropertyValue("opacity") == 0 &&
       getComputedStyle(main).getPropertyValue("display") != "none"
     ) {
-      header.setAttribute("style", "visibility: visible; opacity: 1");
-      main.setAttribute("style", "display: none");
+      if (window.innerWidth > 991) {
+        mainCols[0].setAttribute("style", "display: none");
+        mainCols[1].setAttribute("style", "display: none");
+        main.setAttribute("style", "display: none");
+        header.setAttribute("style", "visibility: visible; opacity: 1");
+      } else {
+        if (
+          getComputedStyle(mainCols[1]).getPropertyValue("display") != "none"
+        ) {
+          mainCols[0].setAttribute("style", "display: block");
+          mainCols[1].setAttribute("style", "display: none");
+        } else {
+          mainCols[0].setAttribute("style", "display: none");
+          mainCols[1].setAttribute("style", "display: none");
+          main.setAttribute("style", "display: none");
+          header.setAttribute("style", "visibility: visible; opacity: 1");
+        }
+      }
       window.scrollTo(0, window.innerHeight / 2);
       lastPos = window.scrollY;
     } else if (
@@ -57,7 +89,13 @@ const upScrollHandler = () => {
       getComputedStyle(header).getPropertyValue("opacity") == 0
     ) {
       section.setAttribute("style", "disply: none");
-      main.setAttribute("style", "display: flex");
+      main.setAttribute("style", "display: block");
+      if (window.innerWidth < 992) {
+        mainCols[1].setAttribute("style", "display: block");
+      } else {
+        mainCols[0].setAttribute("style", "display: block");
+        mainCols[1].setAttribute("style", "display: block");
+      }
       window.scrollTo(0, window.innerHeight / 2);
       lastPos = window.scrollY;
     } else {
