@@ -85,11 +85,11 @@ section {
 
 @media (max-width: 991px) {
   main {
-    height: 200vh;
+    height: auto;
     .row {
       height: auto;
       & > div {
-        height: 100vh;
+        min-height: 100vh;
         &:nth-child(2) {
           img {
             height: 7vh;
