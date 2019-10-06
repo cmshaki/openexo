@@ -108,6 +108,13 @@
     }
   }
 }
+@media screen and (max-width: 991px) {
+  .hero-content {
+    img {
+      height: 12vh;
+    }
+  }
+}
 
 @media screen and (max-width: 576px) {
   .hero-content {
@@ -140,13 +147,6 @@
           margin-bottom: 5vh;
         }
       }
-    }
-  }
-}
-@media screen and (max-width: 991px) {
-  .hero-content {
-    img {
-      height: 12vh;
     }
   }
 }
