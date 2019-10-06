@@ -77,9 +77,9 @@ window.addEventListener("scroll", () => {
     window.clearTimeout(scrollTimer);
   }
   if (window.scrollY > lastPos) {
-    timer = window.setTimeout(downScrollHandler, 1000);
+    timer = window.setTimeout(downScrollHandler, 200);
   }
   if (window.scrollY < lastPos) {
-    timer = window.setTimeout(upScrollHandler, 1000);
+    timer = window.setTimeout(upScrollHandler, 200);
   }
 });
