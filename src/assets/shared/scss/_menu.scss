@@ -139,3 +139,14 @@
     }
   }
 }
+
+@media screen and (max-width: 991px) {
+  .menu-modal {
+    .document-links {
+      button {
+        margin-top: 10vh;
+        color: rgba(#fff, 0.3);
+      }
+    }
+  }
+}
