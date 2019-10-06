@@ -50,14 +50,6 @@ header {
     display: inline-block !important;
     position: fixed;
     margin-left: 8vw;
-
-    &:nth-child(2) {
-      //margin-top: -100vh;
-    }
-    &:nth-child(3) {
-      //margin: 0;
-      //margin-top: -100vh;
-    }
   }
 }
 
