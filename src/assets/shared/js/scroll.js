@@ -59,83 +59,79 @@ document.addEventListener("scroll", () => {
   }
 
   // Scroll Effects
-  if (html.scrollTop > 0) {
+  if (html.scrollTop > body.scrollTop) {
     // Down Scroll
     if (
-      mainFirstCol.offsetTop == mainSecondCol.offsetTop ||
-      (html.scrollTop > header.offsetTop + window.innerHeight / 4 &&
-        html.scrollTop < mainFirstCol.offsetTop - window.innerHeight / 2)
+      html.scrollTop > header.offsetTop + window.innerHeight / 4 &&
+        html.scrollTop < header.offsetTop + window.innerHeight / 3
     ) {
       window.scrollTo(0, main.offsetTop);
     } else if (
-      html.scrollTop > mainFirstCol.offsetTop + window.innerHeight / 4 &&
-      html.scrollTop < mainSecondCol.offsetTop - window.innerHeight / 2
+      mainFirstCol.offsetTop !== mainSecondCol.offsetTop &&
+      (html.scrollTop > mainFirstCol.offsetTop + window.innerHeight / 4 &&
+      html.scrollTop < mainFirstCol.offsetTop + window.innerHeight / 3)
     ) {
       window.scrollTo(0, mainSecondCol.offsetTop);
-    }
-    if (
+    } else if (
       html.scrollTop > mainSecondCol.offsetTop + window.innerHeight / 4 &&
-      html.scrollTop < section.offsetTop - window.innerHeight / 2
+      html.scrollTop < mainSecondCol.offsetTop + window.innerHeight / 3
     ) {
       window.scrollTo(0, section.offsetTop);
     }
     // Up Sroll
     if (
-      mainFirstCol.offsetTop == mainSecondCol.offsetTop ||
-      (html.scrollTop < mainFirstCol.offsetTop - window.innerHeight / 4 &&
-        html.scrollTop > mainFirstCol.offsetTop - window.innerHeight / 2)
+      (html.scrollTop < main.offsetTop - window.innerHeight / 4 &&
+        html.scrollTop > main.offsetTop - window.innerHeight / 3)
     ) {
       window.scrollTo(1, 0);
     } else if (
-      html.scrollTop > mainSecondCol.offsetTop + window.innerHeight / 4 &&
-      html.scrollTop < mainSecondCol.offsetTop - window.innerHeight / 2
+      mainFirstCol.offsetTop !== mainSecondCol.offsetTop &&
+      html.scrollTop < mainSecondCol.offsetTop - window.innerHeight / 4 &&
+      html.scrollTop > mainSecondCol.offsetTop - window.innerHeight / 3
     ) {
       window.scrollTo(0, mainFirstCol.offsetTop);
-    }
-    if (
-      html.scrollTop < section.offsetTop - window.innerHeight / 4 &&
-      html.scrollTop > section.offsetTop - window.innerHeight / 2
+    } else if (
+      (html.scrollTop < section.offsetTop - window.innerHeight / 4 &&
+      html.scrollTop > section.offsetTop - window.innerHeight / 3)
     ) {
       window.scrollTo(0, mainSecondCol.offsetTop);
     }
   }
 
-  if (body.scrollTop > 0) {
+  if (body.scrollTop > html.scrollTop) {
     // Down Scroll
     if (
-      mainFirstCol.offsetTop == mainSecondCol.offsetTop ||
-      (body.scrollTop > header.offsetTop + window.innerHeight / 4 &&
-        body.scrollTop < mainFirstCol.offsetTop - window.innerHeight / 2)
+      body.scrollTop > header.offsetTop + window.innerHeight / 4 &&
+        body.scrollTop < header.offsetTop + window.innerHeight / 3
     ) {
       window.scrollTo(0, main.offsetTop);
     } else if (
-      body.scrollTop > mainFirstCol.offsetTop + window.innerHeight / 4 &&
-      body.scrollTop < mainSecondCol.offsetTop - window.innerHeight / 2
+      mainFirstCol.offsetTop !== mainSecondCol.offsetTop &&
+      (body.scrollTop > mainFirstCol.offsetTop + window.innerHeight / 4 &&
+      body.scrollTop < mainFirstCol.offsetTop + window.innerHeight / 3)
     ) {
       window.scrollTo(0, mainSecondCol.offsetTop);
-    }
-    if (
+    } else if (
       body.scrollTop > mainSecondCol.offsetTop + window.innerHeight / 4 &&
-      body.scrollTop < section.offsetTop - window.innerHeight / 2
+      body.scrollTop < mainSecondCol.offsetTop + window.innerHeight / 3
     ) {
       window.scrollTo(0, section.offsetTop);
     }
     // Up Sroll
     if (
-      mainFirstCol.offsetTop == mainSecondCol.offsetTop ||
-      (body.scrollTop < mainFirstCol.offsetTop - window.innerHeight / 4 &&
-        body.scrollTop > mainFirstCol.offsetTop - window.innerHeight / 2)
+      (body.scrollTop < main.offsetTop - window.innerHeight / 4 &&
+        body.scrollTop > main.offsetTop - window.innerHeight / 3)
     ) {
       window.scrollTo(1, 0);
     } else if (
-      body.scrollTop > mainSecondCol.offsetTop + window.innerHeight / 4 &&
-      body.scrollTop < mainSecondCol.offsetTop - window.innerHeight / 2
+      mainFirstCol.offsetTop !== mainSecondCol.offsetTop &&
+      body.scrollTop < mainSecondCol.offsetTop - window.innerHeight / 4 &&
+      body.scrollTop > mainSecondCol.offsetTop - window.innerHeight / 3
     ) {
       window.scrollTo(0, mainFirstCol.offsetTop);
-    }
-    if (
-      body.scrollTop < section.offsetTop - window.innerHeight / 4 &&
-      body.scrollTop > section.offsetTop - window.innerHeight / 2
+    } else if (
+      (body.scrollTop < section.offsetTop - window.innerHeight / 4 &&
+      body.scrollTop > section.offsetTop - window.innerHeight / 3)
     ) {
       window.scrollTo(0, mainSecondCol.offsetTop);
     }
