@@ -83,10 +83,12 @@ section {
   }
 }
 
-@media (max-width: 991px) {
+// Small Screens
+@media screen and (max-width: 575px) {
   .separator {
     width: 40vw;
   }
+
   main {
     height: auto;
     .row {
@@ -114,7 +116,39 @@ section {
       }
     }
   }
+
   section {
     height: auto;
+  }
+}
+
+// Medium screens
+@media screen and (max-width: 991px) {
+  main {
+    height: auto;
+    .row {
+      height: auto;
+      & > div {
+        min-height: 100vh;
+        &:nth-child(2) {
+          img {
+            height: 7vh;
+          }
+          .display-5 {
+            font-size: 1.3rem;
+          }
+          p {
+            font-size: 1rem;
+          }
+          div {
+            button {
+              &:first-child {
+                margin-bottom: 2vh;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

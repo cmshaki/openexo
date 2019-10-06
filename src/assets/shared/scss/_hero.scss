@@ -109,7 +109,7 @@
   }
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 576px) {
   .hero-content {
     img {
       height: 8vh;
@@ -140,6 +140,13 @@
           margin-bottom: 5vh;
         }
       }
+    }
+  }
+}
+@media screen and (max-width: 991px) {
+  .hero-content {
+    img {
+      height: 12vh;
     }
   }
 }
