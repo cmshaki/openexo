@@ -1,139 +1,85 @@
-const main = document.querySelector("main");
-const mainFirstCol = document.querySelector("main .row .col-md-12:first-child");
-const mainSecondCol = document.querySelector("main .row .col-md-12:last-child");
-const body = document.querySelector("body");
-const html = document.querySelector("html");
 const header = document.querySelector("header");
+const main = document.querySelector("main");
 const section = document.querySelector("section");
-const menu = document.querySelector(".nav-menu");
-const menuLines = document.querySelectorAll(".nav-menu .line");
-const menuText = document.querySelector(".nav-menu .text");
+const html = document.querySelector("html");
 
-let windowHeight = window.innerHeight / 2;
+// Variables to be Used
+let count = 0;
+let timer;
+let scrollTimer;
+let lastPos;
 
-if ((html.scrollTop || body.scrollTop) > menu.offsetTop) {
-  if (
-    !menuText.style.color ||
-    menuText.style.color == "#ffffff" ||
-    menuText.style.color == "rgb(255, 255, 255)"
-  ) {
-    menuText.setAttribute("style", "color: #000");
-    menuLines.forEach(item => {
-      item.setAttribute("style", "background: #000");
-    });
-  }
-} else {
-  if (
-    menuText.style.color == "#000000" ||
-    menuText.style.color == "rgb(0, 0, 0)"
-  ) {
-    menuText.setAttribute("style", "color: #ffffff");
-    menuLines.forEach(item => {
-      item.setAttribute("style", "background: #ffffff");
-    });
-  }
-}
+window.addEventListener("DOMContentLoaded", () => {
+  window.scrollTo(0, window.innerHeight / 2);
+  lastPos = window.scrollY;
+});
 
-document.addEventListener("scroll", () => {
-  if ((html.scrollTop || body.scrollTop) > menu.offsetTop) {
+const downScrollHandler = () => {
+  if (count > 1) {
     if (
-      !menuText.style.color ||
-      menuText.style.color == "#ffffff" ||
-      menuText.style.color == "rgb(255, 255, 255)"
+      getComputedStyle(header).getPropertyValue("opacity") != 0 &&
+      getComputedStyle(main).getPropertyValue("display") == "none"
     ) {
-      menuText.setAttribute("style", "color: #000000");
-      menuLines.forEach(item => {
-        item.setAttribute("style", "background: #000000");
-      });
-    }
-  } else {
-    if (
-      menuText.style.color == "#000000" ||
-      menuText.style.color == "rgb(0, 0, 0)"
+      header.setAttribute(
+        "style",
+        "animation: scroll-out-above 0.2s ease-in forwards"
+      );
+      main.setAttribute("style", "display: flex");
+      window.scrollTo(0, window.innerHeight / 2);
+    } else if (
+      getComputedStyle(main).getPropertyValue("display") != "none" &&
+      getComputedStyle(header).getPropertyValue("opacity") == 0
     ) {
-      menuText.setAttribute("style", "color: #ffffff");
-      menuLines.forEach(item => {
-        item.setAttribute("style", "background: #ffffff");
-      });
+      main.setAttribute(
+        "style",
+        "animation: scroll-out-above 0.2s ease-in forwards"
+      );
+      section.setAttribute("style", "display: flex; width: 100%");
+      window.scrollTo(0, window.innerHeight / 2);
+    } else {
+      lastPos = window.scrollY;
     }
   }
+};
 
-  // Scroll Effects
-  if (html.scrollTop > body.scrollTop) {
-    // Down Scroll
+const upScrollHandler = () => {
+  if (count > 1) {
     if (
-      html.scrollTop > header.offsetTop + window.innerHeight / 4 &&
-        html.scrollTop < header.offsetTop + window.innerHeight / 3
+      getComputedStyle(header).getPropertyValue("opacity") == 0 &&
+      getComputedStyle(main).getPropertyValue("display") != "none"
     ) {
-      window.scrollTo(0, main.offsetTop);
+      header.setAttribute("style", "visibility: visible; opacity: 1");
+      main.setAttribute("style", "display: none");
+      window.scrollTo(0, window.innerHeight / 2);
+      lastPos = window.scrollY;
     } else if (
-      mainFirstCol.offsetTop !== mainSecondCol.offsetTop &&
-      (html.scrollTop > mainFirstCol.offsetTop + window.innerHeight / 4 &&
-      html.scrollTop < mainFirstCol.offsetTop + window.innerHeight / 3)
+      getComputedStyle(main).getPropertyValue("display") == "none" &&
+      getComputedStyle(header).getPropertyValue("opacity") == 0
     ) {
-      window.scrollTo(0, mainSecondCol.offsetTop);
-    } else if (
-      html.scrollTop > mainSecondCol.offsetTop + window.innerHeight / 4 &&
-      html.scrollTop < mainSecondCol.offsetTop + window.innerHeight / 3
-    ) {
-      window.scrollTo(0, section.offsetTop);
-    }
-    // Up Sroll
-    if (
-      (html.scrollTop < main.offsetTop - window.innerHeight / 4 &&
-        html.scrollTop > main.offsetTop - window.innerHeight / 3)
-    ) {
-      window.scrollTo(1, 0);
-    } else if (
-      mainFirstCol.offsetTop !== mainSecondCol.offsetTop &&
-      html.scrollTop < mainSecondCol.offsetTop - window.innerHeight / 4 &&
-      html.scrollTop > mainSecondCol.offsetTop - window.innerHeight / 3
-    ) {
-      window.scrollTo(0, mainFirstCol.offsetTop);
-    } else if (
-      (html.scrollTop < section.offsetTop - window.innerHeight / 4 &&
-      html.scrollTop > section.offsetTop - window.innerHeight / 3)
-    ) {
-      window.scrollTo(0, mainSecondCol.offsetTop);
+      section.setAttribute("style", "disply: none");
+      main.setAttribute("style", "display: flex");
+      window.scrollTo(0, window.innerHeight / 2);
+      lastPos = window.scrollY;
+    } else {
+      lastPos = window.scrollY;
     }
   }
+};
 
-  if (body.scrollTop > html.scrollTop) {
-    // Down Scroll
-    if (
-      body.scrollTop > header.offsetTop + window.innerHeight / 4 &&
-        body.scrollTop < header.offsetTop + window.innerHeight / 3
-    ) {
-      window.scrollTo(0, main.offsetTop);
-    } else if (
-      mainFirstCol.offsetTop !== mainSecondCol.offsetTop &&
-      (body.scrollTop > mainFirstCol.offsetTop + window.innerHeight / 4 &&
-      body.scrollTop < mainFirstCol.offsetTop + window.innerHeight / 3)
-    ) {
-      window.scrollTo(0, mainSecondCol.offsetTop);
-    } else if (
-      body.scrollTop > mainSecondCol.offsetTop + window.innerHeight / 4 &&
-      body.scrollTop < mainSecondCol.offsetTop + window.innerHeight / 3
-    ) {
-      window.scrollTo(0, section.offsetTop);
-    }
-    // Up Sroll
-    if (
-      (body.scrollTop < main.offsetTop - window.innerHeight / 4 &&
-        body.scrollTop > main.offsetTop - window.innerHeight / 3)
-    ) {
-      window.scrollTo(1, 0);
-    } else if (
-      mainFirstCol.offsetTop !== mainSecondCol.offsetTop &&
-      body.scrollTop < mainSecondCol.offsetTop - window.innerHeight / 4 &&
-      body.scrollTop > mainSecondCol.offsetTop - window.innerHeight / 3
-    ) {
-      window.scrollTo(0, mainFirstCol.offsetTop);
-    } else if (
-      (body.scrollTop < section.offsetTop - window.innerHeight / 4 &&
-      body.scrollTop > section.offsetTop - window.innerHeight / 3)
-    ) {
-      window.scrollTo(0, mainSecondCol.offsetTop);
-    }
+window.addEventListener("scroll", () => {
+  if (count < 2) {
+    count++;
+  }
+  if (timer) {
+    window.clearTimeout(timer);
+  }
+  if (scrollTimer) {
+    window.clearTimeout(scrollTimer);
+  }
+  if (window.scrollY > lastPos) {
+    timer = window.setTimeout(downScrollHandler, 1000);
+  }
+  if (window.scrollY < lastPos) {
+    timer = window.setTimeout(upScrollHandler, 1000);
   }
 });
