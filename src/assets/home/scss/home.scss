@@ -115,10 +115,28 @@ section {
         }
       }
     }
+
+    .main-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   section {
     height: auto;
+    .container {
+      h1 {
+        font-size: 1.4rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+      h2 {
+        margin-top: 2vh;
+        font-size: 1.3rem;
+      }
+    }
   }
 }
 
@@ -141,13 +159,19 @@ section {
             font-size: 1rem;
           }
           div {
-            button {
+            a {
               &:first-child {
                 margin-bottom: 2vh;
               }
             }
           }
         }
+      }
+    }
+    .main-buttons {
+      flex-direction: column;
+      a:first-child {
+        margin-bottom: 2vh;
       }
     }
   }
