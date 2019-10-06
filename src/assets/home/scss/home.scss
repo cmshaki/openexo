@@ -85,11 +85,29 @@ section {
 
 @media (max-width: 991px) {
   main {
-    height: auto;
+    height: 200vh;
     .row {
       height: auto;
       & > div {
-        height: auto;
+        height: 100vh;
+        &:nth-child(2) {
+          img {
+            height: 7vh;
+          }
+          .display-5 {
+            font-size: 1.3rem;
+          }
+          p {
+            font-size: 1rem;
+          }
+          div {
+            button {
+              &:first-child {
+                margin-bottom: 2vh;
+              }
+            }
+          }
+        }
       }
     }
   }
