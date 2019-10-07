@@ -83,7 +83,10 @@ const upScrollHandler = () => {
         menuLines.forEach(item => {
           item.setAttribute("style", "background: #ffffff");
         });
-        header.setAttribute("style", "visibility: visible; opacity: 1");
+        header.setAttribute(
+          "style",
+          "visibility: visible; animation: fade-in 2s ease-in-out forwards;"
+        );
       } else {
         if (
           getComputedStyle(mainCols[1]).getPropertyValue("display") != "none"
