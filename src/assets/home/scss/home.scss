@@ -199,6 +199,12 @@ section {
     color: #fff !important;
   }
 }
+@media screen and (max-width: 1366px) and (min-width: 1023px) {
+  .mt-lg-3,
+  .mt-lg-5 {
+    margin-top: 5vh !important;
+  }
+}
 
 // Medium screens
 @media screen and (max-width: 991px) {
