@@ -195,6 +195,9 @@ section {
   position: fixed;
   top: 0;
   left: 0;
+  .btn-primary {
+    color: #fff !important;
+  }
 }
 
 // Medium screens
@@ -271,12 +274,12 @@ section {
       h1 {
         font-size: 1.4rem;
       }
+      a,
       p {
         font-size: 1rem;
       }
       h2 {
-        margin-top: 2vh;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
       }
     }
   }
