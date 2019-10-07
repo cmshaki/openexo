@@ -28,6 +28,10 @@
     opacity: 0;
     transform: translateY(-50vh);
   }
+  80% {
+    opacity: 1;
+    transform: translateY(10vh);
+  }
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -38,6 +42,10 @@
   0% {
     opacity: 0;
     transform: translateY(50vh);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(-10vh);
   }
   100% {
     opacity: 1;
@@ -50,6 +58,10 @@
     opacity: 0;
     transform: translateX(-50vw);
   }
+  80% {
+    opacity: 1;
+    transform: translateX(3vw);
+  }
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -60,6 +72,10 @@
   0% {
     opacity: 0;
     transform: translateX(50vw);
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(-3vw);
   }
   100% {
     opacity: 1;
@@ -95,28 +111,28 @@
 
 .from-above {
   opacity: 0;
-  animation: from-above 0.5s ease-in forwards;
+  animation: from-above 2s ease-in-out forwards;
 }
 
 .from-below {
   opacity: 0;
-  animation: from-below 0.5s ease-in forwards;
+  animation: from-below 2s ease-in-out forwards;
 }
 
 .from-left {
   opacity: 0;
-  animation: from-left 0.5s ease-in forwards;
+  animation: from-left 2s ease-in-out forwards;
 }
 
 .from-right {
   opacity: 0;
-  animation: from-right 0.5s ease-in forwards;
+  animation: from-right 2s ease-in-out forwards;
 }
 
 .grow-height {
   opacity: 0;
   height: 0;
-  animation: grow-height 0.5s ease-in forwards;
+  animation: grow-height 2s ease-in-out forwards;
 }
 
 body,
