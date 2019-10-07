@@ -6,7 +6,6 @@ const section = document.querySelector("section");
 // Variables to be Used
 let count = 0;
 let timer;
-let scrollTimer;
 let lastPos;
 
 window.addEventListener("DOMContentLoaded", () => {
