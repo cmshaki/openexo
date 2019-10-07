@@ -5,13 +5,10 @@ const main = document.querySelector("main");
 const menu = document.querySelector(".nav-menu");
 const menuModal = document.querySelector(".menu-modal");
 const closeBtn = document.querySelector(".menu-modal > .close");
-const listItems = document.querySelectorAll(".menu-modal .list-item-wrapper");
 const allLinks = document.querySelector(".menu-modal .all-links");
-const documentLink = allLinks.querySelector("#documents");
-const homeLink = allLinks.querySelector("#home");
-const learnLink = allLinks.querySelector("#learn");
-const registerLink = allLinks.querySelector("#register");
-const loginLink = allLinks.querySelector("#login");
+const listItems = document.querySelectorAll(
+  ".menu-modal .all-links .list-item-wrapper"
+);
 const menuText = document.querySelector(".nav-menu .text");
 const menuLines = document.querySelectorAll(".nav-menu .line");
 const mainCols = document.querySelectorAll("main .row > div");
@@ -41,28 +38,6 @@ menu.addEventListener("click", () => {
   html.setAttribute("style", "overflow: hidden");
 });
 
-let testReg;
-listItems.forEach(item => {
-  testReg = /documents/g.test(item.text);
-  if (!testReg) {
-    item.addEventListener("click", () => {
-      menuModal.setAttribute(
-        "style",
-        "visibility: hidden; opacity: 0; width: 0"
-      );
-      menu.setAttribute("style", "visibility: visible; opacity: 1");
-      body.setAttribute("style", "overflow: auto");
-      html.setAttribute("style", "overflow: auto");
-    });
-  }
-});
-
-documentLink.addEventListener("click", () => {
-  documentLinksBody.setAttribute("style", "display: block");
-  allLinks.setAttribute("style", "display: none");
-  closeBtn.setAttribute("style", "visibility: hidden; opacity: 0");
-});
-
 backNav.addEventListener("click", () => {
   documentLinksBody.setAttribute("style", "display: none");
   allLinks.setAttribute("style", "display: block");
@@ -80,7 +55,7 @@ closeNav.addEventListener("click", () => {
 });
 
 // Home Link
-homeLink.addEventListener("click", () => {
+listItems[0].addEventListener("click", () => {
   body.setAttribute("style", "overflow: auto");
   html.setAttribute("style", "overflow: auto");
   menuModal.setAttribute("style", "visibility: hidden; opacity: 0; width: 0");
@@ -96,8 +71,15 @@ homeLink.addEventListener("click", () => {
   });
 });
 
+// Documents Link
+listItems[2].addEventListener("click", () => {
+  documentLinksBody.setAttribute("style", "display: block");
+  allLinks.setAttribute("style", "display: none");
+  closeBtn.setAttribute("style", "visibility: hidden; opacity: 0");
+});
+
 // Learn Link
-learnLink.addEventListener("click", () => {
+listItems[1].addEventListener("click", () => {
   body.setAttribute("style", "overflow: auto");
   html.setAttribute("style", "overflow: auto");
   menuModal.setAttribute("style", "visibility: hidden; opacity: 0; width: 0");
@@ -119,7 +101,7 @@ learnLink.addEventListener("click", () => {
 });
 
 // Register Link
-registerLink.addEventListener("click", () => {
+listItems[3].addEventListener("click", () => {
   body.setAttribute("style", "overflow: auto");
   html.setAttribute("style", "overflow: auto");
   menuModal.setAttribute("style", "visibility: hidden; opacity: 0; width: 0");
@@ -136,7 +118,7 @@ registerLink.addEventListener("click", () => {
 });
 
 // Login Link
-loginLink.addEventListener("click", () => {
+listItems[4].addEventListener("click", () => {
   body.setAttribute("style", "overflow: auto");
   html.setAttribute("style", "overflow: auto");
   menuModal.setAttribute("style", "visibility: hidden; opacity: 0; width: 0");
