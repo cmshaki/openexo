@@ -1,6 +1,6 @@
 const header = document.querySelector("header");
 const main = document.querySelector("main");
-const mainCols = document.querySelectorAll("main .row .col-md-12");
+const mainCols = document.querySelectorAll("main .row > div");
 const section = document.querySelector("section");
 
 // Variables to be Used
@@ -110,9 +110,6 @@ window.addEventListener("scroll", () => {
   }
   if (timer) {
     window.clearTimeout(timer);
-  }
-  if (scrollTimer) {
-    window.clearTimeout(scrollTimer);
   }
   if (window.scrollY > lastPos) {
     timer = window.setTimeout(downScrollHandler, 200);
