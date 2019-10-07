@@ -1,11 +1,15 @@
 const header = document.querySelector("header");
 const main = document.querySelector("main");
+const menuText = document.querySelector(".nav-menu .text");
+const menuLines = document.querySelectorAll(".nav-menu .line");
 const mainCols = document.querySelectorAll("main .row > div");
 const section = document.querySelector("section");
 
 // Variables to be Used
 let count = 0;
 let timer;
+let resizeTimer;
+let resizeTimer2;
 let lastPos;
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -27,8 +31,16 @@ const downScrollHandler = () => {
       if (window.innerWidth > 992) {
         mainCols[0].setAttribute("style", "display: block");
         mainCols[1].setAttribute("style", "display: block");
+        menuText.setAttribute("style", "color: #000000");
+        menuLines.forEach(item => {
+          item.setAttribute("style", "background: #000000");
+        });
       } else {
         mainCols[0].setAttribute("style", "display: block");
+        menuText.setAttribute("style", "color: #000000");
+        menuLines.forEach(item => {
+          item.setAttribute("style", "background: #000000");
+        });
       }
       window.scrollTo(0, window.innerHeight / 2);
       lastPos = window.scrollY;
@@ -67,6 +79,10 @@ const upScrollHandler = () => {
         mainCols[0].setAttribute("style", "display: none");
         mainCols[1].setAttribute("style", "display: none");
         main.setAttribute("style", "display: none");
+        menuText.setAttribute("style", "color: #ffffff");
+        menuLines.forEach(item => {
+          item.setAttribute("style", "background: #ffffff");
+        });
         header.setAttribute("style", "visibility: visible; opacity: 1");
       } else {
         if (
@@ -78,6 +94,10 @@ const upScrollHandler = () => {
           mainCols[0].setAttribute("style", "display: none");
           mainCols[1].setAttribute("style", "display: none");
           main.setAttribute("style", "display: none");
+          menuText.setAttribute("style", "color: #ffffff");
+          menuLines.forEach(item => {
+            item.setAttribute("style", "background: #ffffff");
+          });
           header.setAttribute("style", "visibility: visible; opacity: 1");
         }
       }
@@ -115,5 +135,37 @@ window.addEventListener("scroll", () => {
   }
   if (window.scrollY < lastPos) {
     timer = window.setTimeout(upScrollHandler, 200);
+  }
+});
+
+window.addEventListener("resize", () => {
+  if (resizeTimer) {
+    window.clearTimeout(resizeTimer);
+  }
+  if (window.innerWidth >= 992) {
+    if (getComputedStyle(main).getPropertyValue("display") != "none") {
+      if (getComputedStyle(mainCols[0]).getPropertyValue("display") == "none") {
+        resizeTimer = window.setTimeout(() => {
+          mainCols[0].setAttribute("style", "display: block");
+        }, 200);
+      }
+      if (getComputedStyle(mainCols[1]).getPropertyValue("display") == "none") {
+        resizeTimer = window.setTimeout(() => {
+          mainCols[1].setAttribute("style", "display: block");
+        }, 200);
+      }
+    }
+  } else if (window.innerWidth < 992) {
+    if (getComputedStyle(main).getPropertyValue("display") != "none") {
+      if (
+        getComputedStyle(mainCols[0]).getPropertyValue("display") != "none" &&
+        getComputedStyle(mainCols[1]).getPropertyValue("display") != "none"
+      ) {
+        resizeTimer = window.setTimeout(() => {
+          mainCols[0].setAttribute("style", "display: none");
+          mainCols[1].setAttribute("style", "display: block");
+        }, 200);
+      }
+    }
   }
 });
