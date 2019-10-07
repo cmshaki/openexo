@@ -1,4 +1,5 @@
 import "./assets/shared/js/menu";
+import "./assets/shared/js/video";
 import "./assets/shared/js/scroll";
 import "./assets/home/scss/home.scss";
 
