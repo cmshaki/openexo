@@ -234,12 +234,17 @@ section {
     width: 40vw;
   }
 
+  header {
+    height: 100vh;
+    overflow: hidden;
+  }
   main {
-    height: auto;
+    height: 100vh;
+    overflow: hidden;
     .row {
-      height: auto;
+      height: 100vh;
       & > div {
-        min-height: 100vh;
+        height: 100vh;
         &:nth-child(2) {
           img {
             height: 7vh;
@@ -262,7 +267,8 @@ section {
   }
 
   section {
-    height: auto;
+    height: 100vh;
+    overflow: hidden;
     .container {
       h1 {
         font-size: 1.4rem;

@@ -24,8 +24,8 @@ const closeNav = document.querySelector(
 closeBtn.addEventListener("click", () => {
   menuModal.setAttribute("style", "visibility: hidden; opacity: 0; width: 0");
   menu.setAttribute("style", "visibility: visible; opacity: 1");
-  body.setAttribute("style", "overflow: auto");
-  html.setAttribute("style", "overflow: auto");
+  body.setAttribute("style", "overflow: auto; height: 200vh");
+  html.setAttribute("style", "overflow: auto; height: 200vh");
 });
 
 menu.addEventListener("click", () => {
@@ -34,8 +34,8 @@ menu.addEventListener("click", () => {
     "visibility: visible; opacity: 1; width: 100%"
   );
   menu.setAttribute("style", "visibility: hidden; opacity: 0");
-  body.setAttribute("style", "overflow: hidden");
-  html.setAttribute("style", "overflow: hidden");
+  body.setAttribute("style", "overflow: hidden; height: 100vh");
+  html.setAttribute("style", "overflow: hidden; height: 100vh");
 });
 
 backNav.addEventListener("click", () => {
@@ -47,8 +47,8 @@ backNav.addEventListener("click", () => {
 closeNav.addEventListener("click", () => {
   menuModal.setAttribute("style", "visibility: hidden; opacity: 0; width: 0");
   menu.setAttribute("style", "visibility: visible; opacity: 1");
-  body.setAttribute("style", "overflow: auto");
-  html.setAttribute("style", "overflow: auto");
+  body.setAttribute("style", "overflow: auto; height: 200vh");
+  html.setAttribute("style", "overflow: auto; height: 200vh");
   allLinks.setAttribute("style", "display: block");
   documentLinksBody.setAttribute("style", "display: none");
   closeBtn.setAttribute("style", "visibility: visible; opacity: 1");
@@ -56,8 +56,8 @@ closeNav.addEventListener("click", () => {
 
 // Home Link
 listItems[0].addEventListener("click", () => {
-  body.setAttribute("style", "overflow: auto");
-  html.setAttribute("style", "overflow: auto");
+  body.setAttribute("style", "overflow: auto; height: 200vh");
+  html.setAttribute("style", "overflow: auto; height: 200vh");
   menuModal.setAttribute("style", "visibility: hidden; opacity: 0; width: 0");
   menu.setAttribute("style", "visibility: visible; opacity: 1");
   header.setAttribute("style", "visibility: visible; opacity: 1");
@@ -71,17 +71,10 @@ listItems[0].addEventListener("click", () => {
   });
 });
 
-// Documents Link
-listItems[2].addEventListener("click", () => {
-  documentLinksBody.setAttribute("style", "display: block");
-  allLinks.setAttribute("style", "display: none");
-  closeBtn.setAttribute("style", "visibility: hidden; opacity: 0");
-});
-
 // Learn Link
 listItems[1].addEventListener("click", () => {
-  body.setAttribute("style", "overflow: auto");
-  html.setAttribute("style", "overflow: auto");
+  body.setAttribute("style", "overflow: auto; height: 200vh");
+  html.setAttribute("style", "overflow: auto; height: 200vh");
   menuModal.setAttribute("style", "visibility: hidden; opacity: 0; width: 0");
   menu.setAttribute("style", "visibility: visible; opacity: 1");
   header.setAttribute("style", "visibility: hidden; opacity: 0");
@@ -100,10 +93,17 @@ listItems[1].addEventListener("click", () => {
   });
 });
 
+// Documents Link
+listItems[2].addEventListener("click", () => {
+  documentLinksBody.setAttribute("style", "display: block");
+  allLinks.setAttribute("style", "display: none");
+  closeBtn.setAttribute("style", "visibility: hidden; opacity: 0");
+});
+
 // Register Link
 listItems[3].addEventListener("click", () => {
-  body.setAttribute("style", "overflow: auto");
-  html.setAttribute("style", "overflow: auto");
+  body.setAttribute("style", "overflow: auto; height: 200vh");
+  html.setAttribute("style", "overflow: auto; height: 200vh");
   menuModal.setAttribute("style", "visibility: hidden; opacity: 0; width: 0");
   menu.setAttribute("style", "visibility: visible; opacity: 1");
   header.setAttribute("style", "visibility: hidden; opacity: 0");
@@ -119,8 +119,8 @@ listItems[3].addEventListener("click", () => {
 
 // Login Link
 listItems[4].addEventListener("click", () => {
-  body.setAttribute("style", "overflow: auto");
-  html.setAttribute("style", "overflow: auto");
+  body.setAttribute("style", "overflow: auto; height: 200vh");
+  html.setAttribute("style", "overflow: auto; height: 200vh");
   menuModal.setAttribute("style", "visibility: hidden; opacity: 0; width: 0");
   menu.setAttribute("style", "visibility: visible; opacity: 1");
   header.setAttribute("style", "visibility: hidden; opacity: 0");
