@@ -60,7 +60,7 @@ const downScrollHandler = () => {
       mainCols[0].setAttribute("style", "display: none");
       mainCols[1].setAttribute("style", "display: none");
       main.setAttribute("style", "display: none");
-      section.setAttribute("style", "display: flex; width: 100%");
+      section.setAttribute("style", "display: block");
       window.scrollTo(0, window.innerHeight / 2);
       lastPos = window.scrollY;
     } else {
