@@ -2,7 +2,7 @@ const html = document.querySelector("html");
 const body = document.querySelector("body");
 const header = document.querySelector("header");
 const main = document.querySelector("main");
-const menu = document.querySelector(".nav-menu");
+const menu = document.querySelector("#nav");
 const menuModal = document.querySelector(".menu-modal");
 const closeBtn = document.querySelector(".menu-modal > .close");
 const allLinks = document.querySelector(".menu-modal .all-links");
@@ -23,7 +23,7 @@ const closeNav = document.querySelector(
 
 closeBtn.addEventListener("click", () => {
   menuModal.setAttribute("style", "visibility: hidden; opacity: 0; width: 0");
-  menu.setAttribute("style", "visibility: hidden; opacity: 0");
+  menu.setAttribute("style", "visibility: visible; opacity: 1");
   body.setAttribute("style", "overflow: auto; height: 200vh");
   html.setAttribute("style", "overflow: auto; height: 200vh");
 });

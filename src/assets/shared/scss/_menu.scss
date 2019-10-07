@@ -143,9 +143,17 @@
 @media screen and (max-width: 575px) {
   .menu-modal {
     .document-links {
+      .list-item-wrapper {
+        font-size: 40px;
+      }
       button {
-        margin-top: 5vh;
+        display: inline-block;
+        font-size: 40px;
+        margin-top: 5vh !important;
         color: rgba(#fff, 0.3);
+        &:nth-child(3) {
+          margin-right: 3vw;
+        }
       }
     }
   }
