@@ -23,7 +23,7 @@ const closeNav = document.querySelector(
 
 closeBtn.addEventListener("click", () => {
   menuModal.setAttribute("style", "visibility: hidden; opacity: 0; width: 0");
-  menu.setAttribute("style", "visibility: visible; opacity: 1");
+  menu.setAttribute("style", "visibility: hidden; opacity: 0");
   body.setAttribute("style", "overflow: auto; height: 200vh");
   html.setAttribute("style", "overflow: auto; height: 200vh");
 });
